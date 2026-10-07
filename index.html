@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PetaniMuda.id</title>
+<title>Analisis Kekuatan Branding PetaniMuda.id</title>
 
 <style>
 body{
@@ -11,13 +11,15 @@ body{
     background:#f4f8f2;
     margin:0;
     padding:0;
+    color:#222;
+    line-height:1.6;
 }
 
 header{
     background:#2e7d32;
     color:white;
     text-align:center;
-    padding:30px;
+    padding:30px 20px;
 }
 
 .container{
@@ -39,6 +41,10 @@ img{
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
+.table-wrap{
+    overflow-x:auto;
+}
+
 table{
     width:100%;
     border-collapse:collapse;
@@ -47,6 +53,7 @@ table{
 th,td{
     border:1px solid #ddd;
     padding:10px;
+    text-align:left;
 }
 
 th{
@@ -62,8 +69,8 @@ footer{
     margin-top:20px;
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
@@ -73,7 +80,8 @@ footer{
 
 <div class="container">
 
-    smart-farming.jpg
+    <!-- Gambar disembunyikan otomatis jika smart-farming.jpg belum di-upload -->
+    <img src="smart-farming.jpg" alt="Smart farming" onerror="this.style.display='none'">
 
     <div class="card">
         <h2>Deskripsi</h2>
@@ -87,24 +95,45 @@ footer{
     <div class="card">
         <h2>Hasil Penilaian</h2>
 
-        <table>
-            <tr>
-                <th>Aspek</th>
-                <th>Skor</th>
-            </tr>
-            <tr>
-                <td>Relevansi</td>
-                <td>10/10</td>
-            </tr>
-            <tr>
-                <td>Kepercayaan Publik</td>
-                <td>9/10</td>
-            </tr>
-            <tr>
-                <td>Citra Profesional</td>
-                <td>7/10</td>
-            </tr>
-            <tr>
-                <td>Inovasi</td>
-                <td>8/10</td>
-            </
+        <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>Aspek</th>
+                    <th>Skor</th>
+                </tr>
+                <tr>
+                    <td>Relevansi</td>
+                    <td>10/10</td>
+                </tr>
+                <tr>
+                    <td>Kepercayaan Publik</td>
+                    <td>9/10</td>
+                </tr>
+                <tr>
+                    <td>Citra Profesional</td>
+                    <td>7/10</td>
+                </tr>
+                <tr>
+                    <td>Inovasi</td>
+                    <td>8/10</td>
+                </tr>
+                <tr>
+                    <td>Daya Tarik Generasi Muda</td>
+                    <td>../10</td>
+                </tr>
+                <tr>
+                    <td>Keberlanjutan</td>
+                    <td>../10</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 PetaniMuda.id</p>
+</footer>
+
+</body>
+</html>
