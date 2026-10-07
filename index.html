@@ -61,6 +61,24 @@ th{
     color:white;
 }
 
+.skor{
+    text-align:center;
+    font-size:2rem;
+    font-weight:bold;
+    color:#2e7d32;
+    margin:10px 0 0;
+}
+
+ul.daftar{
+    list-style:none;
+    padding-left:0;
+    margin:0;
+}
+
+ul.daftar li{
+    padding:6px 0;
+}
+
 footer{
     background:#2e7d32;
     color:white;
@@ -80,16 +98,24 @@ footer{
 
 <div class="container">
 
-    <!-- Gambar disembunyikan otomatis jika smart-farming.jpg belum di-upload -->
     <img src="smart-farming.jpg" alt="Smart farming" onerror="this.style.display='none'">
 
     <div class="card">
         <h2>Deskripsi</h2>
         <p>
-            Proyek ini berisi analisis kekuatan branding sektor pertanian berdasarkan
-            relevansi, kepercayaan publik, inovasi, daya tarik generasi muda,
-            dan keberlanjutan.
+            Proyek ini berisi analisis kekuatan branding sektor pertanian dengan fokus
+            pada citra, relevansi, inovasi, dan daya tarik sektor pertanian di era digital.
         </p>
+    </div>
+
+    <div class="card">
+        <h2>Tujuan</h2>
+        <ul>
+            <li>Mengidentifikasi identitas brand sektor pertanian.</li>
+            <li>Mengukur kekuatan branding sektor pertanian.</li>
+            <li>Menganalisis faktor internal dan eksternal melalui metode SWOT.</li>
+            <li>Memberikan rekomendasi pengembangan branding.</li>
+        </ul>
     </div>
 
     <div class="card">
@@ -101,39 +127,24 @@ footer{
                     <th>Aspek</th>
                     <th>Skor</th>
                 </tr>
-                <tr>
-                    <td>Relevansi</td>
-                    <td>10/10</td>
-                </tr>
-                <tr>
-                    <td>Kepercayaan Publik</td>
-                    <td>9/10</td>
-                </tr>
-                <tr>
-                    <td>Citra Profesional</td>
-                    <td>7/10</td>
-                </tr>
-                <tr>
-                    <td>Inovasi</td>
-                    <td>8/10</td>
-                </tr>
-                <tr>
-                    <td>Daya Tarik Generasi Muda</td>
-                    <td>../10</td>
-                </tr>
-                <tr>
-                    <td>Keberlanjutan</td>
-                    <td>../10</td>
-                </tr>
+                <tr><td>Relevansi</td><td>10/10</td></tr>
+                <tr><td>Kepercayaan Publik</td><td>9/10</td></tr>
+                <tr><td>Citra Profesional</td><td>7/10</td></tr>
+                <tr><td>Inovasi</td><td>8/10</td></tr>
+                <tr><td>Daya Tarik Generasi Muda</td><td>6/10</td></tr>
+                <tr><td>Keberlanjutan</td><td>9/10</td></tr>
             </table>
         </div>
+
+        <h3>Skor Keseluruhan</h3>
+        <p class="skor">⭐ 8,2 / 10 (Kuat)</p>
     </div>
 
-</div>
+    <div class="card">
+        <h2>Ringkasan Analisis</h2>
 
-<footer>
-    <p>&copy; 2026 PetaniMuda.id</p>
-</footer>
-
-</body>
-</html>
+        <h3>Kekuatan</h3>
+        <ul class="daftar">
+            <li>✅ Mendukung ketahanan pangan nasional</li>
+            <li>✅ Menjadi kebutuhan dasar masyarakat</li>
+            <li>✅ Memiliki tingkat kepercayaan publik yang
