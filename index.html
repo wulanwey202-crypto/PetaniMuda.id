@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Analisis Kekuatan Branding PetaniMuda.id</title>
+<title>Analisis Kekuatan Branding Bidang Pertanian</title>
 
 <style>
 body{
     font-family: Arial, sans-serif;
     background:#f4f8f2;
     margin:0;
-    padding:0;
     color:#222;
     line-height:1.6;
 }
@@ -23,14 +22,9 @@ header{
 }
 
 .container{
-    max-width:1000px;
+    max-width:900px;
     margin:auto;
     padding:20px;
-}
-
-img{
-    width:100%;
-    border-radius:10px;
 }
 
 .card{
@@ -41,9 +35,10 @@ img{
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-.table-wrap{
-    overflow-x:auto;
-}
+h2{ margin-top:0; color:#2e7d32; }
+h3{ color:#388e3c; }
+
+.table-wrap{ overflow-x:auto; }
 
 table{
     width:100%;
@@ -62,22 +57,21 @@ th{
 }
 
 .skor{
-    text-align:center;
-    font-size:2rem;
+    font-size:1.8rem;
     font-weight:bold;
     color:#2e7d32;
-    margin:10px 0 0;
-}
-
-ul.daftar{
-    list-style:none;
-    padding-left:0;
     margin:0;
 }
 
-ul.daftar li{
-    padding:6px 0;
+pre{
+    background:#f1f5f0;
+    padding:15px;
+    border-radius:8px;
+    overflow-x:auto;
+    line-height:1.4;
 }
+
+a{ color:#2e7d32; }
 
 footer{
     background:#2e7d32;
@@ -92,19 +86,16 @@ footer{
 <body>
 
 <header>
-    <h1>🌾 Analisis Kekuatan Branding PetaniMuda.id</h1>
-    <p>Analisis Branding Sektor Pertanian Indonesia</p>
+    <h1>Analisis Kekuatan Branding Bidang Pertanian</h1>
 </header>
 
 <div class="container">
 
-    <img src="smart-farming.jpg" alt="Smart farming" onerror="this.style.display='none'">
-
     <div class="card">
         <h2>Deskripsi</h2>
         <p>
-            Proyek ini berisi analisis kekuatan branding sektor pertanian dengan fokus
-            pada citra, relevansi, inovasi, dan daya tarik sektor pertanian di era digital.
+            Proyek ini berisi analisis kekuatan branding sektor pertanian berdasarkan aspek
+            relevansi, kepercayaan publik, inovasi, daya tarik generasi muda, dan keberlanjutan.
         </p>
     </div>
 
@@ -113,20 +104,16 @@ footer{
         <ul>
             <li>Mengidentifikasi identitas brand sektor pertanian.</li>
             <li>Mengukur kekuatan branding sektor pertanian.</li>
-            <li>Menganalisis faktor internal dan eksternal melalui metode SWOT.</li>
+            <li>Melakukan analisis SWOT.</li>
             <li>Memberikan rekomendasi pengembangan branding.</li>
         </ul>
     </div>
 
     <div class="card">
         <h2>Hasil Penilaian</h2>
-
         <div class="table-wrap">
             <table>
-                <tr>
-                    <th>Aspek</th>
-                    <th>Skor</th>
-                </tr>
+                <tr><th>Aspek</th><th>Skor</th></tr>
                 <tr><td>Relevansi</td><td>10/10</td></tr>
                 <tr><td>Kepercayaan Publik</td><td>9/10</td></tr>
                 <tr><td>Citra Profesional</td><td>7/10</td></tr>
@@ -136,15 +123,109 @@ footer{
             </table>
         </div>
 
-        <h3>Skor Keseluruhan</h3>
-        <p class="skor">⭐ 8,2 / 10 (Kuat)</p>
+        <h3>Skor Total</h3>
+        <p class="skor">8,2 / 10 (Kuat)</p>
     </div>
 
     <div class="card">
-        <h2>Ringkasan Analisis</h2>
+        <h2>Ringkasan Hasil</h2>
 
         <h3>Kekuatan</h3>
-        <ul class="daftar">
-            <li>✅ Mendukung ketahanan pangan nasional</li>
-            <li>✅ Menjadi kebutuhan dasar masyarakat</li>
-            <li>✅ Memiliki tingkat kepercayaan publik yang
+        <ul>
+            <li>Memiliki relevansi tinggi karena berkaitan langsung dengan kebutuhan pangan.</li>
+            <li>Mendukung ketahanan pangan nasional.</li>
+            <li>Memiliki tingkat kepercayaan publik yang baik.</li>
+            <li>Berpotensi berkembang melalui inovasi teknologi pertanian.</li>
+        </ul>
+
+        <h3>Kelemahan</h3>
+        <ul>
+            <li>Masih dianggap sebagai sektor tradisional oleh sebagian masyarakat.</li>
+            <li>Minat generasi muda terhadap pertanian masih perlu ditingkatkan.</li>
+        </ul>
+
+        <h3>Peluang</h3>
+        <ul>
+            <li>Smart Farming dan Internet of Things (IoT).</li>
+            <li>Digitalisasi sektor pertanian.</li>
+            <li>Pengembangan agribisnis berbasis teknologi.</li>
+            <li>Peningkatan pasar ekspor pertanian.</li>
+        </ul>
+
+        <h3>Ancaman</h3>
+        <ul>
+            <li>Perubahan iklim.</li>
+            <li>Alih fungsi lahan pertanian.</li>
+            <li>Persaingan produk impor.</li>
+            <li>Fluktuasi harga komoditas.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Struktur Repository</h2>
+<pre>PetaniMuda.id/
+│
+├── README.md
+├── index.html
+│
+└── docs/
+    ├── 01-pendahuluan.md
+    ├── 02-profil-brand-pertanian.md
+    ├── 03-analisis-branding.md
+    ├── 04-analisis-swot.md
+    ├── 05-rekomendasi.md
+    └── 06-kesimpulan.md</pre>
+    </div>
+
+    <div class="card">
+        <h2>Dokumen Analisis</h2>
+        <div class="table-wrap">
+            <table>
+                <tr><th>File</th><th>Deskripsi</th></tr>
+                <tr>
+                    <td><a href="docs/01-pendahuluan.html">01-pendahuluan</a></td>
+                    <td>Latar belakang, rumusan masalah, dan tujuan analisis</td>
+                </tr>
+                <tr>
+                    <td><a href="docs/02-profil-brand-pertanian.html">02-profil-brand-pertanian</a></td>
+                    <td>Profil dan identitas brand sektor pertanian</td>
+                </tr>
+                <tr>
+                    <td><a href="docs/03-analisis-branding.html">03-analisis-branding</a></td>
+                    <td>Penilaian kekuatan branding dan skoring</td>
+                </tr>
+                <tr>
+                    <td><a href="docs/04-analisis-swot.html">04-analisis-swot</a></td>
+                    <td>Analisis SWOT sektor pertanian</td>
+                </tr>
+                <tr>
+                    <td><a href="docs/05-rekomendasi.html">05-rekomendasi</a></td>
+                    <td>Strategi pengembangan branding</td>
+                </tr>
+                <tr>
+                    <td><a href="docs/06-kesimpulan.html">06-kesimpulan</a></td>
+                    <td>Ringkasan hasil analisis dan kesimpulan akhir</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Kesimpulan</h2>
+        <p>
+            Berdasarkan hasil analisis, sektor pertanian memiliki kekuatan branding yang tinggi
+            dengan skor keseluruhan <strong>8,2/10</strong>. Posisi sektor pertanian sangat kuat
+            karena berhubungan langsung dengan kebutuhan masyarakat dan ketahanan pangan nasional.
+            Penguatan citra modern melalui teknologi, digitalisasi, dan inovasi menjadi faktor
+            penting untuk meningkatkan daya tarik sektor pertanian di masa depan.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p><strong>Disusun sebagai proyek analisis branding sektor pertanian pada repository GitHub PetaniMuda.id.</strong></p>
+</footer>
+
+</body>
+</html>
