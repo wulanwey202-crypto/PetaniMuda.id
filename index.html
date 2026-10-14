@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PetaniMuda.id</title>
+
+<title>PetaniMuda.id | Solusi Pertanian Modern</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -20,14 +22,15 @@ body{
 }
 
 header{
-    background:#2e7d32;
+    background:linear-gradient(135deg,#2e7d32,#4caf50);
     color:white;
     text-align:center;
-    padding:50px 20px;
+    padding:60px 20px;
 }
 
 header h1{
-    font-size:2.5rem;
+    font-size:3rem;
+    margin-bottom:10px;
 }
 
 header p{
@@ -40,50 +43,49 @@ header p{
     padding:20px;
 }
 
-.banner{
+.hero{
     width:100%;
-    border-radius:12px;
-    margin-bottom:25px;
+    border-radius:15px;
+    margin-top:-30px;
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
 }
 
 .card{
     background:white;
-    padding:25px;
-    margin-bottom:20px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    padding:30px;
+    border-radius:15px;
+    margin-top:25px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
-h2{
+.card h2{
     color:#2e7d32;
     margin-bottom:15px;
 }
 
-h3{
-    color:#388e3c;
-    margin-bottom:10px;
-}
-
-ul{
-    padding-left:20px;
+.section-title{
+    text-align:center;
+    margin:40px 0 20px;
+    color:#2e7d32;
+    font-size:2rem;
 }
 
 .product-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
 }
 
 .product-card{
     background:white;
-    border-radius:10px;
+    border-radius:15px;
     overflow:hidden;
-    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
     transition:0.3s;
 }
 
 .product-card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
 }
 
 .product-card img{
@@ -93,12 +95,34 @@ ul{
 }
 
 .product-card h3{
-    text-align:center;
-    padding:15px 10px 5px;
+    padding:15px;
+    color:#2e7d32;
 }
 
 .product-card p{
-    padding:0 15px 15px;
+    padding:0 15px 20px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+.whatsapp{
+    display:inline-block;
+    background:#25d366;
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
+    margin-top:15px;
+    border-radius:50px;
+    font-weight:bold;
+}
+
+.whatsapp:hover{
+    background:#1eb857;
+}
+
+.contact{
     text-align:center;
 }
 
@@ -106,22 +130,17 @@ ul{
     margin-bottom:10px;
 }
 
-.contact a{
-    color:#2e7d32;
-    text-decoration:none;
-    font-weight:bold;
-}
-
 footer{
+    margin-top:40px;
     background:#2e7d32;
     color:white;
     text-align:center;
-    padding:20px;
-    margin-top:20px;
+    padding:25px;
 }
-</style>
 
+</style>
 </head>
+
 <body>
 
 <header>
@@ -131,22 +150,22 @@ footer{
 
 <div class="container">
 
-    <img src="smart-farming.jpg" alt="PetaniMuda.id" class="banner">
+    <img src="smart-farming.jpg" alt="Smart Farming" class="hero">
 
     <div class="card">
         <h2>Tentang Kami</h2>
         <p>
-            PetaniMuda.id adalah platform pertanian modern yang menyediakan
-            pupuk berkualitas, alat pertanian modern, serta teknologi Smart Farming
-            untuk membantu petani meningkatkan produktivitas dan efisiensi usaha tani.
+            PetaniMuda.id hadir sebagai mitra petani Indonesia dalam menyediakan
+            pupuk berkualitas, alat pertanian modern, dan teknologi Smart Farming
+            untuk meningkatkan produktivitas serta efisiensi usaha tani.
         </p>
     </div>
 
     <div class="card">
         <h2>Visi</h2>
         <p>
-            Menjadi platform pertanian modern terpercaya yang mendukung kemajuan
-            petani Indonesia.
+            Menjadi platform pertanian modern terpercaya yang mendukung
+            kemajuan petani Indonesia.
         </p>
     </div>
 
@@ -156,4 +175,100 @@ footer{
             <li>Menyediakan produk pertanian berkualitas.</li>
             <li>Mendukung penggunaan teknologi pertanian.</li>
             <li>Meningkatkan produktivitas petani Indonesia.</li>
-            
+            <li>Memberikan edukasi pertanian modern.</li>
+            <li>Mendukung pertanian berkelanjutan.</li>
+        </ul>
+    </div>
+
+    <h2 class="section-title">🛒 Produk Unggulan</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="pupuk-organik.jpg" alt="Pupuk Organik">
+            <h3>🌾 Pupuk Organik</h3>
+            <p>
+                Pupuk berbahan alami untuk menjaga kesuburan tanah dan
+                meningkatkan kualitas hasil panen.
+            </p>
+        </div>
+
+        <div class="product-card">
+            <img src="pupuk-npk.jpg" alt="Pupuk NPK">
+            <h3>🌱 Pupuk NPK</h3>
+            <p>
+                Mengandung unsur hara lengkap untuk mendukung
+                pertumbuhan tanaman yang optimal.
+            </p>
+        </div>
+
+        <div class="product-card">
+            <img src="traktor-mini.jpg" alt="Traktor Mini">
+            <h3>🚜 Traktor Mini</h3>
+            <p>
+                Membantu pengolahan lahan lebih cepat, efisien, dan hemat tenaga.
+            </p>
+        </div>
+
+        <div class="product-card">
+            <img src="drip-irrigation.jpg" alt="Drip Irrigation">
+            <h3>💧 Sistem Irigasi Tetes</h3>
+            <p>
+                Menghemat penggunaan air dan meningkatkan efektivitas penyiraman.
+            </p>
+        </div>
+
+        <div class="product-card">
+            <img src="sensor-tanah.jpg" alt="Sensor Tanah">
+            <h3>📡 Sensor Kelembaban Tanah</h3>
+            <p>
+                Monitoring kondisi lahan secara real-time berbasis Smart Farming.
+            </p>
+        </div>
+
+        <div class="product-card">
+            <img src="sprayer.jpg" alt="Sprayer">
+            <h3>🔋 Sprayer Elektrik</h3>
+            <p>
+                Penyemprotan pupuk dan pestisida lebih cepat dan efisien.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <h2>🌟 Keunggulan PetaniMuda.id</h2>
+        <ul>
+            <li>Produk berkualitas dan terpercaya.</li>
+            <li>Harga kompetitif.</li>
+            <li>Pengiriman ke seluruh Indonesia.</li>
+            <li>Konsultasi pertanian.</li>
+            <li>Dukungan teknologi Smart Farming.</li>
+            <li>Edukasi pertanian berkelanjutan.</li>
+        </ul>
+    </div>
+
+    <div class="card contact">
+        <h2>📞 Hubungi Kami</h2>
+
+        <p><strong>WhatsApp:</strong> 083866268372</p>
+        <p><strong>Email:</strong> info@petanimuda.id</p>
+        <p><strong>Website:</strong> petanimuda.biz.id</p>
+
+        <a class="whatsapp"
+           href="https://wa.me/6283866268372?text=Halo%20PetaniMuda.id%2C%20saya%20ingin%20konsultasi%20produk%20pertanian."
+           target="_blank">
+           Chat WhatsApp Sekarang
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    <h3>🌱 PetaniMuda.id</h3>
+    <p>Muda Berkarya, Petani Berdaya, Indonesia Jaya.</p>
+</footer>
+
+</body>
+</html>
