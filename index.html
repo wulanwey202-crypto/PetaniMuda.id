@@ -6,11 +6,16 @@
 <title>PetaniMuda.id</title>
 
 <style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f4f8f2;
+*{
     margin:0;
-    color:#222;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f8f2;
+    color:#333;
     line-height:1.6;
 }
 
@@ -18,42 +23,93 @@ header{
     background:#2e7d32;
     color:white;
     text-align:center;
-    padding:40px 20px;
+    padding:50px 20px;
+}
+
+header h1{
+    font-size:2.5rem;
+}
+
+header p{
+    font-size:1.2rem;
 }
 
 .container{
-    max-width:1000px;
+    max-width:1200px;
     margin:auto;
     padding:20px;
 }
 
-.logo{
-    display:block;
-    margin:20px auto;
+.banner{
     width:100%;
-    max-width:500px;
     border-radius:12px;
+    margin-bottom:25px;
 }
 
 .card{
     background:white;
     padding:25px;
     margin-bottom:20px;
-    border-radius:10px;
+    border-radius:12px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
 h2{
     color:#2e7d32;
-    margin-top:0;
+    margin-bottom:15px;
 }
 
 h3{
     color:#388e3c;
+    margin-bottom:10px;
 }
 
 ul{
     padding-left:20px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.product-card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+}
+
+.product-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.product-card h3{
+    text-align:center;
+    padding:15px 10px 5px;
+}
+
+.product-card p{
+    padding:0 15px 15px;
+    text-align:center;
+}
+
+.contact p{
+    margin-bottom:10px;
+}
+
+.contact a{
+    color:#2e7d32;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 footer{
@@ -63,22 +119,9 @@ footer{
     padding:20px;
     margin-top:20px;
 }
-
-.contact{
-    font-size:18px;
-}
-
-.contact a{
-    color:#2e7d32;
-    text-decoration:none;
-}
-
-.contact a:hover{
-    text-decoration:underline;
-}
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
@@ -88,24 +131,22 @@ footer{
 
 <div class="container">
 
-    <img class="logo" src="smart-farming.jpg" alt="PetaniMuda.id">
+    <img src="smart-farming.jpg" alt="PetaniMuda.id" class="banner">
 
     <div class="card">
         <h2>Tentang Kami</h2>
         <p>
-            PetaniMuda.id adalah platform yang menyediakan berbagai kebutuhan
-            pertanian modern untuk membantu petani meningkatkan produktivitas
-            dan efisiensi kerja. Kami menghadirkan pupuk berkualitas,
-            alat pertanian modern, serta teknologi pertanian yang mendukung
-            perkembangan sektor pertanian Indonesia.
+            PetaniMuda.id adalah platform pertanian modern yang menyediakan
+            pupuk berkualitas, alat pertanian modern, serta teknologi Smart Farming
+            untuk membantu petani meningkatkan produktivitas dan efisiensi usaha tani.
         </p>
     </div>
 
     <div class="card">
         <h2>Visi</h2>
         <p>
-            Menjadi platform pertanian modern terpercaya yang mendukung
-            kemajuan petani Indonesia.
+            Menjadi platform pertanian modern terpercaya yang mendukung kemajuan
+            petani Indonesia.
         </p>
     </div>
 
@@ -113,134 +154,6 @@ footer{
         <h2>Misi</h2>
         <ul>
             <li>Menyediakan produk pertanian berkualitas.</li>
-            <li>Mendukung penggunaan teknologi dalam pertanian.</li>
+            <li>Mendukung penggunaan teknologi pertanian.</li>
             <li>Meningkatkan produktivitas petani Indonesia.</li>
-            <li>Memberikan edukasi dan informasi pertanian yang bermanfaat.</li>
-            <li>Mendukung pertanian berkelanjutan.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>🌾 Produk Pupuk Pertanian</h2>
-
-        <h3>Pupuk Organik</h3>
-        <p>
-            Pupuk berbahan alami yang membantu menjaga kesuburan tanah
-            dan meningkatkan kualitas hasil panen.
-        </p>
-
-        <ul>
-            <li>Pupuk Kompos</li>
-            <li>Pupuk Kandang</li>
-            <li>Pupuk Organik Cair</li>
-            <li>Biofertilizer</li>
-        </ul>
-
-        <h3>Pupuk Anorganik</h3>
-        <ul>
-            <li>Urea</li>
-            <li>NPK</li>
-            <li>ZA</li>
-            <li>SP-36</li>
-            <li>KCL</li>
-        </ul>
-
-        <h3>Nutrisi Tanaman</h3>
-        <ul>
-            <li>Nutrisi Hidroponik</li>
-            <li>Pupuk Daun</li>
-            <li>Mikro Nutrien</li>
-            <li>ZPT (Zat Pengatur Tumbuh)</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>🚜 Alat Pertanian Modern</h2>
-
-        <h3>Pengolahan Lahan</h3>
-        <ul>
-            <li>Traktor Mini</li>
-            <li>Hand Tractor</li>
-            <li>Cultivator</li>
-        </ul>
-
-        <h3>Sistem Irigasi</h3>
-        <ul>
-            <li>Pompa Air Pertanian</li>
-            <li>Sprinkler</li>
-            <li>Drip Irrigation</li>
-            <li>Selang Irigasi</li>
-        </ul>
-
-        <h3>Peralatan Budidaya</h3>
-        <ul>
-            <li>Alat Tanam Jagung</li>
-            <li>Alat Tanam Padi</li>
-            <li>Seeder Manual</li>
-            <li>Penyemprot Elektrik</li>
-        </ul>
-
-        <h3>Smart Farming</h3>
-        <ul>
-            <li>Sensor Kelembaban Tanah</li>
-            <li>Sensor Cuaca</li>
-            <li>Monitoring Pertanian Berbasis IoT</li>
-            <li>Sistem Penyiraman Otomatis</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>⭐ Keunggulan PetaniMuda.id</h2>
-        <ul>
-            <li>Produk berkualitas dan terpercaya.</li>
-            <li>Harga kompetitif.</li>
-            <li>Mendukung pertanian modern.</li>
-            <li>Pengiriman ke seluruh Indonesia.</li>
-            <li>Konsultasi produk pertanian.</li>
-            <li>Edukasi pertanian modern.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>📚 Edukasi Pertanian</h2>
-        <ul>
-            <li>Teknik budidaya tanaman.</li>
-            <li>Penggunaan pupuk yang tepat.</li>
-            <li>Pengendalian hama dan penyakit.</li>
-            <li>Teknologi Smart Farming.</li>
-            <li>Tips meningkatkan hasil panen.</li>
-        </ul>
-    </div>
-
-    <div class="card contact">
-        <h2>📞 Hubungi Kami</h2>
-
-        <p><strong>WhatsApp:</strong> +62 8xx-xxxx-xxxx</p>
-
-        <p><strong>Email:</strong>
-            <a href="mailto:info@petanimuda.id">
-                info@petanimuda.id
-            </a>
-        </p>
-
-        <p><strong>Instagram:</strong> @petanimuda.id</p>
-
-        <p><strong>Facebook:</strong> PetaniMuda.id</p>
-
-        <p><strong>TikTok:</strong> @petanimuda.id</p>
-
-        <p><strong>Website:</strong>
-            <a href="https://petanimuda.id">
-                https://petanimuda.id
-            </a>
-        </p>
-    </div>
-
-</div>
-
-<footer>
-    <p><strong>🌱 PetaniMuda.id | Muda Berkarya, Petani Berdaya, Indonesia Jaya.</strong></p>
-</footer>
-
-</body>
-</html>
+            
