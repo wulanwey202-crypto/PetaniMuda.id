@@ -2,7 +2,7 @@
 
 <img src="smart-farming.jpg" alt="Logo PetaniMuda.biz.id, Generasi Bertani untuk Masa Depan" width="420">
 
-# PetaniMuda.id
+# PetaniMuda.biz.id
 
 **Solusi Pertanian Modern untuk Indonesia**
 
