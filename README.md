@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="smart-farming.jpg" alt="Logo PetaniMuda.id, Generasi Bertani untuk Masa Depan" width="420">
+<img src="smart-farming.jpg" alt="Logo PetaniMuda.biz.id, Generasi Bertani untuk Masa Depan" width="420">
 
 # PetaniMuda.id
 
