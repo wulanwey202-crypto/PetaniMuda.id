@@ -1,274 +1,800 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PetaniMuda.id | Solusi Pertanian Modern</title>
-
+<title>PetaniMuda.id</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* Layout: sticky bar, dark-green hero with a live field illustration, then left-aligned sections on a calm green-tinted ground. */
+:root{
+  --bg:#F3F6EE; --surface:#FFFFFF; --surface-2:#E8F0E1; --ink:#12281B; --muted:#4F6157; --line:#D4DFCC;
+  --brand:#1E6B3C; --on-brand:#FFFFFF; --brand-text:#1A5E34; --brand-soft:#DCEBD5;
+  --sun:#E9A21B; --on-sun:#2E2100; --water:#2F7FB5; --dry:#B8521B;
+  --hero-bg:#12341F; --hero-ink:#EAF3E6; --hero-muted:#A9C2B0; --hero-sky:#1B4A2D; --hero-hill:#245E39;
+  --row-a:#2E7A47; --row-b:#276B3E; --sprout:#A8E0B2; --hero-line:rgba(234,243,230,.28); --hero-chip:rgba(10,31,19,.78);
+  --tile-a:#DDEBD6; --tile-b:#F6E7C1; --tile-c:#D5E6F1;
+  --shadow:0 1px 2px rgba(18,40,27,.06),0 10px 28px rgba(18,40,27,.09);
+  --font-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --font-body:'Figtree','Segoe UI',system-ui,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1812; --surface:#142319; --surface-2:#1A2D21; --ink:#E6EFE5; --muted:#9BAEA1; --line:#26382C;
+    --brand:#58B97A; --on-brand:#08170E; --brand-text:#7FD39B; --brand-soft:#1B3326;
+    --sun:#F0B13A; --on-sun:#2E2100; --water:#5AA9DB; --dry:#E58A57;
+    --hero-bg:#0A1F13; --hero-ink:#E6EFE5; --hero-muted:#92AA99; --hero-sky:#10301E; --hero-hill:#174229;
+    --row-a:#1F5A35; --row-b:#1A4C2D; --sprout:#6FC98A; --hero-line:rgba(230,239,229,.26); --hero-chip:rgba(6,18,11,.82);
+    --tile-a:#1E3827; --tile-b:#3A2F14; --tile-c:#16303F;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1812; --surface:#142319; --surface-2:#1A2D21; --ink:#E6EFE5; --muted:#9BAEA1; --line:#26382C;
+  --brand:#58B97A; --on-brand:#08170E; --brand-text:#7FD39B; --brand-soft:#1B3326;
+  --sun:#F0B13A; --on-sun:#2E2100; --water:#5AA9DB; --dry:#E58A57;
+  --hero-bg:#0A1F13; --hero-ink:#E6EFE5; --hero-muted:#92AA99; --hero-sky:#10301E; --hero-hill:#174229;
+  --row-a:#1F5A35; --row-b:#1A4C2D; --sprout:#6FC98A; --hero-line:rgba(230,239,229,.26); --hero-chip:rgba(6,18,11,.82);
+  --tile-a:#1E3827; --tile-b:#3A2F14; --tile-c:#16303F;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+  color-scheme:dark;
 }
 
-body{
-    font-family:Arial, sans-serif;
-    background:#f4f8f2;
-    color:#333;
-    line-height:1.6;
-}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--font-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+h1,h2,h3{font-family:var(--font-display);margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brand-text);outline-offset:3px;border-radius:4px}
+.hero :focus-visible,.site-footer :focus-visible{outline-color:var(--sun)}
 
-header{
-    background:linear-gradient(135deg,#2e7d32,#4caf50);
-    color:white;
-    text-align:center;
-    padding:60px 20px;
-}
+.wrap{max-width:1160px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:500 .75rem/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--brand-text)}
+.section{padding-block:72px;scroll-margin-top:calc(64px + env(safe-area-inset-top,0px))}
+.section-head{display:grid;gap:12px;max-width:640px;margin-bottom:36px}
+.section-head h2{font-size:clamp(1.75rem,3.4vw,2.5rem);line-height:1.1;font-weight:700}
+.section-head p{color:var(--muted)}
+.band{background:var(--surface-2)}
 
-header h1{
-    font-size:3rem;
-    margin-bottom:10px;
-}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid transparent;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;transition:transform .2s,background-color .2s,border-color .2s,filter .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--brand);color:var(--on-brand)}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-sun{background:var(--sun);color:var(--on-sun)}
+.btn-sun:hover{filter:brightness(1.06)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--brand)}
+.btn-hero-ghost{background:transparent;border-color:var(--hero-line);color:var(--hero-ink)}
+.btn-hero-ghost:hover{border-color:var(--hero-ink)}
+.btn-wa{background:#128C4A;color:#fff}
+.btn-wa:hover{filter:brightness(1.1)}
+.btn-sm{min-height:38px;padding:0 14px;font-size:.88rem}
 
-header p{
-    font-size:1.2rem;
-}
+/* Header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font:700 1.15rem var(--font-display);letter-spacing:-.02em}
+.brand svg{width:30px;height:30px;flex:none}
+.brand .dot{color:var(--brand-text)}
+.nav{display:flex;gap:2px}
+.nav a{padding:8px 12px;border-radius:999px;text-decoration:none;font-size:.93rem;font-weight:500;color:var(--muted);transition:background-color .2s,color .2s}
+.nav a:hover{color:var(--ink)}
+.nav a.active{background:var(--surface-2);color:var(--ink)}
+.bar-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;transition:border-color .2s}
+.icon-btn:hover{border-color:var(--brand)}
+.icon-btn svg{width:20px;height:20px}
+.menu-btn{display:none}
+.theme-sun{display:none}
+:root[data-theme="dark"] .theme-sun{display:block}
+:root[data-theme="dark"] .theme-moon{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .theme-sun{display:block}:root:not([data-theme="light"]) .theme-moon{display:none}}
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-}
+/* Hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink);padding-block:56px 72px;scroll-margin-top:64px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero-copy{display:grid;gap:22px;min-width:0}
+.hero-copy>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>*:nth-child(2){animation-delay:.06s}.hero-copy>*:nth-child(3){animation-delay:.12s}.hero-copy>*:nth-child(4){animation-delay:.18s}.hero-copy>*:nth-child(5){animation-delay:.24s}
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+.hero .eyebrow{color:var(--sun)}
+.hero h1{font-size:clamp(2.3rem,5.2vw,4rem);line-height:1.04;font-weight:700}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 70%,color-mix(in srgb,var(--sun) 55%,transparent) 70%)}
+.hero-lead{color:var(--hero-muted);max-width:52ch;font-size:1.06rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px 18px;font:500 .78rem var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--hero-muted)}
+.hero-tags span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sun);margin-right:8px;vertical-align:1px}
+.hero-art{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--hero-line);min-width:0}
+.hero-art svg{display:block;width:100%;height:auto}
+.chip{position:absolute;display:grid;gap:2px;padding:10px 14px;border-radius:10px;background:var(--hero-chip);border:1px solid var(--hero-line);backdrop-filter:blur(6px)}
+.chip small{font:500 .68rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--hero-muted)}
+.chip b{font:600 1.05rem var(--font-display);color:var(--hero-ink)}
+.chip b i{font-style:normal;font-family:var(--font-mono);font-weight:500}
+.chip-a{left:14px;top:14px}.chip-b{right:14px;bottom:14px}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;background:var(--sprout);vertical-align:1px}
+.status-dot.dry{background:var(--sun)}.status-dot.wet{background:#7CC2F0}
 
-.hero{
-    width:100%;
-    border-radius:15px;
-    margin-top:-30px;
-    box-shadow:0 4px 15px rgba(0,0,0,.2);
-}
+/* Tentang */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-copy{display:grid;gap:18px}
+.about-copy h2{font-size:clamp(1.75rem,3.4vw,2.5rem);line-height:1.1}
+.about-copy p{color:var(--muted);max-width:56ch}
+.pillars{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pill{padding:6px 14px;border-radius:999px;background:var(--brand-soft);color:var(--brand-text);font-weight:600;font-size:.88rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:0}
+.tabs{display:flex;gap:4px;padding:8px;border-bottom:1px solid var(--line)}
+.tab{flex:1;min-height:42px;border:0;border-radius:8px;background:transparent;font-weight:600;color:var(--muted);cursor:pointer;transition:background-color .2s,color .2s}
+.tab[aria-selected="true"]{background:var(--brand);color:var(--on-brand)}
+.tab-panel{padding:26px 24px 28px}
+.tab-panel h3{font-size:1.35rem;margin-bottom:12px}
+.vision{font:600 1.35rem/1.35 var(--font-display);letter-spacing:-.01em}
+.mission{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.mission li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.mission svg{width:22px;height:22px;color:var(--brand-text);margin-top:2px}
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    margin-top:25px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
+/* Produk */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filter{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:.9rem;cursor:pointer;transition:background-color .2s,border-color .2s}
+.filter:hover{border-color:var(--brand)}
+.filter[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:22px}
+.product{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;min-width:0}
+.product:hover{transform:translateY(-5px);border-color:var(--brand);box-shadow:var(--shadow)}
+.tile{aspect-ratio:4/3;display:grid;place-items:center;padding:18px;max-width:100%}
+.tile.a{background:var(--tile-a)}.tile.b{background:var(--tile-b)}.tile.c{background:var(--tile-c)}
+.tile svg{width:100%;height:100%;transition:transform .35s}
+.product:hover .tile svg{transform:scale(1.06) rotate(-1.5deg)}
+.product-body{display:flex;flex-direction:column;gap:10px;padding:20px 20px 22px;flex:1}
+.tag{font:500 .7rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-text)}
+.product h3{font-size:1.25rem;line-height:1.2}
+.product p{color:var(--muted);font-size:.96rem}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
+.count{margin-top:18px;font:500 .8rem var(--font-mono);color:var(--muted)}
+.g{fill:var(--brand)}.d{fill:var(--ink)}.l{fill:var(--surface)}.y{fill:var(--sun)}.w{fill:var(--water)}.so{fill:var(--dry);opacity:.55}
+.sw{stroke:var(--water);fill:none;stroke-width:3;stroke-linecap:round}.sd{stroke:var(--ink);fill:none;stroke-width:3;stroke-linecap:round}.sg{stroke:var(--brand);fill:none;stroke-width:3;stroke-linecap:round}.sy{stroke:var(--sun);fill:none;stroke-width:3;stroke-linecap:round}
 
-.card h2{
-    color:#2e7d32;
-    margin-bottom:15px;
-}
+/* Simulasi */
+.sim{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:stretch}
+.sim-controls{display:grid;gap:22px;align-content:start}
+.sim-controls h2{font-size:clamp(1.75rem,3.4vw,2.5rem);line-height:1.1}
+.sim-controls>p{color:var(--muted);max-width:52ch}
+.slider-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:14px}
+.slider-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.slider-top label{font:500 .75rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.slider-top output{font:600 1.6rem var(--font-display);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;height:32px;accent-color:var(--brand);cursor:pointer}
+.presets{display:flex;flex-wrap:wrap;gap:8px}
+.zones{display:flex;justify-content:space-between;font:500 .7rem var(--font-mono);color:var(--muted);letter-spacing:.04em}
+.sim-out{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:24px;display:grid;gap:14px;align-content:start;justify-items:center;text-align:center;min-width:0}
+.gauge{width:min(100%,320px);height:auto}
+.gauge .track{fill:none;stroke:var(--surface-2);stroke-width:16;stroke-linecap:round}
+.gauge .val{fill:none;stroke:var(--brand);stroke-width:16;stroke-linecap:round;transition:stroke-dasharray .35s,stroke .35s}
+.gauge.is-dry .val{stroke:var(--dry)}.gauge.is-wet .val{stroke:var(--water)}
+.gauge text{fill:var(--ink)}
+.gauge .num{font:600 34px var(--font-display);font-variant-numeric:tabular-nums}
+.gauge .lab{font:500 9px var(--font-mono);letter-spacing:.12em;text-transform:uppercase;fill:var(--muted)}
+.state{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;font-weight:700;font-size:.9rem;background:var(--brand-soft);color:var(--brand-text)}
+.state.dry{background:color-mix(in srgb,var(--dry) 16%,transparent);color:var(--dry)}
+.state.wet{background:color-mix(in srgb,var(--water) 16%,transparent);color:var(--water)}
+.advice{color:var(--muted);max-width:34ch}
+.pump{display:flex;gap:10px;align-items:center;font:500 .82rem var(--font-mono);color:var(--muted);padding-top:12px;border-top:1px dashed var(--line);width:100%;justify-content:center}
+.note{font-size:.82rem;color:var(--muted)}
 
-.section-title{
-    text-align:center;
-    margin:40px 0 20px;
-    color:#2e7d32;
-    font-size:2rem;
-}
+/* Kalkulator */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.calc-intro{display:grid;gap:14px;align-content:start}
+.calc-intro h2{font-size:clamp(1.75rem,3.4vw,2.5rem);line-height:1.1}
+.calc-intro p{color:var(--muted);max-width:50ch}
+.form{display:grid;gap:16px;padding:24px}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font:500 .72rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);transition:border-color .2s}
+.field textarea{min-height:92px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand);outline:2px solid var(--brand);outline-offset:0}
+.row2{display:grid;grid-template-columns:1.4fr 1fr;gap:12px}
+.result{display:grid;gap:4px;padding:18px;border-radius:10px;background:var(--brand-soft)}
+.result small{font:500 .72rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-text)}
+.result strong{font:700 clamp(1.9rem,4vw,2.6rem)/1.1 var(--font-display);font-variant-numeric:tabular-nums}
+.result span{color:var(--muted);font-size:.92rem}
 
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
+/* Keunggulan */
+.perks{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.perk{display:grid;gap:12px;padding:28px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);align-content:start;transition:background-color .25s}
+.perk:hover{background:var(--surface)}
+.perk svg{width:30px;height:30px;fill:none;stroke:var(--brand-text);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.perk h3{font-size:1.1rem}
+.perk p{color:var(--muted);font-size:.95rem}
 
-.product-card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-    transition:0.3s;
-}
+/* FAQ */
+.faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.faq-wrap h2{font-size:clamp(1.75rem,3.4vw,2.5rem);line-height:1.1}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 4px;cursor:pointer;font:600 1.05rem var(--font-display);list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 1.6rem/1 var(--font-mono);color:var(--brand-text);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 4px 22px;color:var(--muted);max-width:60ch}
 
-.product-card:hover{
-    transform:translateY(-8px);
-}
+/* Kontak */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.contact-info{display:grid;gap:18px;align-content:start}
+.contact-info h2{font-size:clamp(1.75rem,3.4vw,2.5rem);line-height:1.1}
+.contact-info>p{color:var(--muted);max-width:48ch}
+.rows{display:grid;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:96px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);min-width:0}
+.row .k{font:500 .72rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.row .val{font-weight:600;overflow-wrap:anywhere}
+.copy{min-height:34px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-weight:600;font-size:.82rem;cursor:pointer;transition:border-color .2s}
+.copy:hover{border-color:var(--brand)}
 
-.product-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
+/* Footer */
+.site-footer{background:var(--hero-bg);color:var(--hero-ink);padding-block:40px 32px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px 40px;align-items:flex-start}
+.foot .brand .dot{color:var(--sun)}
+.foot p{color:var(--hero-muted);max-width:40ch;margin-top:10px}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.foot nav a{color:var(--hero-muted);text-decoration:none;font-size:.92rem}
+.foot nav a:hover{color:var(--hero-ink)}
+.copyright{margin-top:28px;padding-top:18px;border-top:1px solid var(--hero-line);color:var(--hero-muted);font:400 .8rem var(--font-mono)}
 
-.product-card h3{
-    padding:15px;
-    color:#2e7d32;
-}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);padding:10px 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:600;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:40;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 
-.product-card p{
-    padding:0 15px 20px;
+@media (max-width:900px){
+  .menu-btn{display:inline-grid}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:2px;padding:10px max(16px,env(safe-area-inset-right,0px)) 14px max(16px,env(safe-area-inset-left,0px));background:var(--bg);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .nav.open{display:flex}
+  .nav a{padding:12px 14px;border-radius:8px}
+  .hero-grid,.about,.sim,.calc,.faq-wrap,.contact{grid-template-columns:1fr}
+  .hero-grid{gap:32px}
+  .perks{grid-template-columns:repeat(2,1fr)}
+  .section{padding-block:56px}
 }
-
-ul{
-    padding-left:20px;
+@media (max-width:560px){
+  .bar-actions .btn-sun{display:none}
+  .perks{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr auto}
+  .row .k{grid-column:1/-1}
+  .row2{grid-template-columns:1fr}
+  .hero{padding-block:36px 52px}
+  .btn{white-space:normal;text-align:center}
 }
-
-.whatsapp{
-    display:inline-block;
-    background:#25d366;
-    color:white;
-    text-decoration:none;
-    padding:15px 25px;
-    margin-top:15px;
-    border-radius:50px;
-    font-weight:bold;
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
 }
-
-.whatsapp:hover{
-    background:#1eb857;
-}
-
-.contact{
-    text-align:center;
-}
-
-.contact p{
-    margin-bottom:10px;
-}
-
-footer{
-    margin-top:40px;
-    background:#2e7d32;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-
 </style>
-</head>
 
-<body>
-
-<header>
-    <h1>🌱 PetaniMuda.id</h1>
-    <p>Solusi Pertanian Modern untuk Indonesia</p>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" data-go="top" aria-label="PetaniMuda.id, ke atas">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" class="g"/><path d="M16 25V13" stroke="var(--on-brand)" stroke-width="2.2" stroke-linecap="round" fill="none"/><path d="M16 15c-5 0-7-3-7-6 5 0 7 2.5 7 6zM16 18c5 0 7-3 7-6-5 0-7 2.5-7 6z" fill="var(--sun)"/></svg>
+      <span>PetaniMuda<span class="dot">.id</span></span>
+    </a>
+    <nav id="nav" class="nav" aria-label="Menu utama">
+      <a href="#tentang" data-go="tentang">Tentang</a>
+      <a href="#produk" data-go="produk">Produk</a>
+      <a href="#simulasi" data-go="simulasi">Smart Farming</a>
+      <a href="#kalkulator" data-go="kalkulator">Kalkulator</a>
+      <a href="#keunggulan" data-go="keunggulan">Keunggulan</a>
+      <a href="#kontak" data-go="kontak">Kontak</a>
+    </nav>
+    <div class="bar-actions">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Ganti tema terang atau gelap">
+        <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg>
+        <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn-sun btn-sm" data-wa="Halo PetaniMuda.id, saya ingin konsultasi produk pertanian." href="https://wa.me/6283866268372" target="_blank" rel="noopener">Konsultasi</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Buka menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
 </header>
 
-<div class="container">
-
-    <img src="smart-farming.jpg" alt="Smart Farming" class="hero">
-
-    <div class="card">
-        <h2>Tentang Kami</h2>
-        <p>
-            PetaniMuda.id hadir sebagai mitra petani Indonesia dalam menyediakan
-            pupuk berkualitas, alat pertanian modern, dan teknologi Smart Farming
-            untuk meningkatkan produktivitas serta efisiensi usaha tani.
-        </p>
+<main>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Muda Berkarya, Petani Berdaya</span>
+      <h1>Solusi <em>Pertanian Modern</em> untuk Indonesia</h1>
+      <p class="hero-lead">PetaniMuda.id hadir sebagai mitra petani Indonesia dalam menyediakan pupuk berkualitas, alat pertanian modern, dan teknologi Smart Farming untuk meningkatkan produktivitas serta efisiensi usaha tani.</p>
+      <div class="hero-cta">
+        <a class="btn btn-sun" href="#produk" data-go="produk">Lihat Produk</a>
+        <a class="btn btn-hero-ghost" data-wa="Halo PetaniMuda.id, saya ingin konsultasi produk pertanian." href="https://wa.me/6283866268372" target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
+      </div>
+      <div class="hero-tags"><span>Pupuk</span><span>Alat Pertanian</span><span>Smart Farming</span></div>
     </div>
-
-    <div class="card">
-        <h2>Visi</h2>
-        <p>
-            Menjadi platform pertanian modern terpercaya yang mendukung
-            kemajuan petani Indonesia.
-        </p>
+    <div class="hero-art" aria-label="Ilustrasi lahan pertanian dengan sensor kelembaban tanah">
+      <svg viewBox="0 0 560 420" role="img" aria-label="Lahan bertingkat dengan sensor tanah di tengah">
+        <rect width="560" height="420" fill="var(--hero-sky)"/>
+        <circle cx="448" cy="104" r="66" fill="none" stroke="var(--sun)" stroke-width="2" opacity=".25"/>
+        <circle cx="448" cy="104" r="46" fill="var(--sun)"/>
+        <path d="M0 232C110 172 220 192 320 206S500 204 560 178V268H0Z" fill="var(--hero-hill)"/>
+        <path d="M0 252Q280 232 560 252V290Q280 270 0 290Z" fill="var(--row-a)"/>
+        <path d="M0 290Q280 270 560 290V336Q280 316 0 336Z" fill="var(--row-b)"/>
+        <path d="M0 336Q280 316 560 336V392Q280 372 0 392Z" fill="var(--row-a)"/>
+        <path d="M0 392Q280 372 560 392V420H0Z" fill="var(--row-b)"/>
+        <defs><g id="sprout" fill="none" stroke="var(--sprout)" stroke-width="2.2" stroke-linecap="round"><path d="M0 0V-10"/><path d="M0 -6C-6 -7 -8 -11 -7 -14 -2 -14 0 -10 0 -6"/><path d="M0 -8C6 -9 8 -13 7 -16 2 -16 0 -12 0 -8"/></g></defs>
+        <use href="#sprout" x="70" y="276"/><use href="#sprout" x="150" y="272"/><use href="#sprout" x="230" y="270"/><use href="#sprout" x="380" y="270"/><use href="#sprout" x="460" y="274"/><use href="#sprout" x="520" y="278"/>
+        <use href="#sprout" x="40" y="322"/><use href="#sprout" x="120" y="318"/><use href="#sprout" x="200" y="316"/><use href="#sprout" x="400" y="316"/><use href="#sprout" x="480" y="320"/>
+        <use href="#sprout" x="90" y="374"/><use href="#sprout" x="180" y="370"/><use href="#sprout" x="260" y="368"/><use href="#sprout" x="340" y="368"/><use href="#sprout" x="430" y="372"/>
+        <rect x="297" y="226" width="6" height="40" rx="2" fill="var(--hero-ink)"/>
+        <rect x="288" y="208" width="24" height="18" rx="4" fill="var(--sun)"/>
+        <path d="M285.9 203.9A20 20 0 0 1 314.1 203.9" fill="none" stroke="var(--sun)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M278.8 196.8A30 30 0 0 1 321.2 196.8" fill="none" stroke="var(--sun)" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+      </svg>
+      <div class="chip chip-a"><small>Kelembaban tanah</small><b><i id="heroMoist">58%</i></b></div>
+      <div class="chip chip-b"><small>Irigasi tetes</small><b><span class="status-dot" id="heroDot"></span><span id="heroPump">Standby</span></b></div>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-        <h2>Misi</h2>
-        <ul>
-            <li>Menyediakan produk pertanian berkualitas.</li>
-            <li>Mendukung penggunaan teknologi pertanian.</li>
-            <li>Meningkatkan produktivitas petani Indonesia.</li>
-            <li>Memberikan edukasi pertanian modern.</li>
-            <li>Mendukung pertanian berkelanjutan.</li>
+<section class="section" id="tentang">
+  <div class="wrap about">
+    <div class="about-copy">
+      <span class="eyebrow">Tentang Kami</span>
+      <h2>Mitra petani untuk usaha tani yang lebih produktif</h2>
+      <p>PetaniMuda.id menyediakan pupuk berkualitas, alat pertanian modern, dan teknologi Smart Farming, supaya petani bisa mengolah lahan lebih cepat, hemat tenaga, dan tepat sasaran.</p>
+      <div class="pillars"><span class="pill">Pupuk berkualitas</span><span class="pill">Alat modern</span><span class="pill">Smart Farming</span></div>
+    </div>
+    <div class="panel">
+      <div class="tabs" role="tablist" aria-label="Visi dan misi">
+        <button class="tab" role="tab" id="tab-visi" aria-selected="true" aria-controls="panel-visi" type="button">Visi</button>
+        <button class="tab" role="tab" id="tab-misi" aria-selected="false" aria-controls="panel-misi" type="button" tabindex="-1">Misi</button>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="panel-visi" aria-labelledby="tab-visi">
+        <p class="vision">Menjadi platform pertanian modern terpercaya yang mendukung kemajuan petani Indonesia.</p>
+      </div>
+      <div class="tab-panel" role="tabpanel" id="panel-misi" aria-labelledby="tab-misi" hidden>
+        <ul class="mission">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Menyediakan produk pertanian berkualitas.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Mendukung penggunaan teknologi pertanian.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Meningkatkan produktivitas petani Indonesia.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Memberikan edukasi pertanian modern.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>Mendukung pertanian berkelanjutan.</li>
         </ul>
+      </div>
     </div>
+  </div>
+</section>
 
-    <h2 class="section-title">🛒 Produk Unggulan</h2>
+<section class="section" id="produk" style="padding-top:8px">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Produk Unggulan</span>
+      <h2>Dari pupuk sampai sensor tanah</h2>
+      <p>Pilih kategori, lalu tanyakan langsung lewat WhatsApp. Nama produk otomatis masuk ke pesan Anda.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter kategori produk">
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">Semua</button>
+      <button class="filter" type="button" data-filter="pupuk" aria-pressed="false">Pupuk</button>
+      <button class="filter" type="button" data-filter="alat" aria-pressed="false">Alat Pertanian</button>
+      <button class="filter" type="button" data-filter="smart" aria-pressed="false">Smart Farming</button>
+    </div>
+    <div class="grid" id="productGrid">
 
-    <div class="product-grid">
-
-        <div class="product-card">
-            <img src="pupuk-organik.jpg" alt="Pupuk Organik">
-            <h3>🌾 Pupuk Organik</h3>
-            <p>
-                Pupuk berbahan alami untuk menjaga kesuburan tanah dan
-                meningkatkan kualitas hasil panen.
-            </p>
+      <article class="product" data-cat="pupuk">
+        <div class="tile a">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Karung pupuk organik">
+            <ellipse cx="60" cy="82" rx="34" ry="4" class="so"/>
+            <path class="g" d="M38 24h44l7 13v37a7 7 0 0 1-7 7H38a7 7 0 0 1-7-7V37z"/>
+            <path class="d" d="M38 24l-4 9h52l-4-9z" opacity=".3"/>
+            <rect class="l" x="41" y="43" width="38" height="26" rx="4"/>
+            <path class="g" d="M60 64c-9-2-11-10-9-15 9 0 13 6 9 15z"/>
+            <path class="sg" d="M60 64V54" style="stroke-width:1.6"/>
+          </svg>
         </div>
-
-        <div class="product-card">
-            <img src="pupuk-npk.jpg" alt="Pupuk NPK">
-            <h3>🌱 Pupuk NPK</h3>
-            <p>
-                Mengandung unsur hara lengkap untuk mendukung
-                pertumbuhan tanaman yang optimal.
-            </p>
+        <div class="product-body">
+          <span class="tag">Pupuk</span>
+          <h3>Pupuk Organik</h3>
+          <p>Pupuk berbahan alami untuk menjaga kesuburan tanah dan meningkatkan kualitas hasil panen.</p>
+          <div class="actions">
+            <a class="btn btn-wa btn-sm" data-wa="Halo PetaniMuda.id, saya ingin bertanya tentang Pupuk Organik." href="https://wa.me/6283866268372" target="_blank" rel="noopener">Tanya via WhatsApp</a>
+            <a class="btn btn-ghost btn-sm" href="#kalkulator" data-go="kalkulator" data-calc="organik">Hitung kebutuhan</a>
+          </div>
         </div>
+      </article>
 
-        <div class="product-card">
-            <img src="traktor-mini.jpg" alt="Traktor Mini">
-            <h3>🚜 Traktor Mini</h3>
-            <p>
-                Membantu pengolahan lahan lebih cepat, efisien, dan hemat tenaga.
-            </p>
+      <article class="product" data-cat="pupuk">
+        <div class="tile a">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Karung pupuk NPK">
+            <ellipse cx="60" cy="82" rx="34" ry="4" class="so"/>
+            <path class="d" d="M38 24h44l7 13v37a7 7 0 0 1-7 7H38a7 7 0 0 1-7-7V37z" style="fill:var(--ink)"/>
+            <path class="y" d="M38 24l-4 9h52l-4-9z"/>
+            <rect class="l" x="41" y="43" width="38" height="26" rx="4"/>
+            <text x="60" y="61" text-anchor="middle" style="font:700 14px var(--font-mono);fill:var(--ink)">NPK</text>
+          </svg>
         </div>
+        <div class="product-body">
+          <span class="tag">Pupuk</span>
+          <h3>Pupuk NPK</h3>
+          <p>Mengandung unsur hara lengkap untuk mendukung pertumbuhan tanaman yang optimal.</p>
+          <div class="actions">
+            <a class="btn btn-wa btn-sm" data-wa="Halo PetaniMuda.id, saya ingin bertanya tentang Pupuk NPK." href="https://wa.me/6283866268372" target="_blank" rel="noopener">Tanya via WhatsApp</a>
+            <a class="btn btn-ghost btn-sm" href="#kalkulator" data-go="kalkulator" data-calc="npk">Hitung kebutuhan</a>
+          </div>
+        </div>
+      </article>
 
-        <div class="product-card">
-            <img src="drip-irrigation.jpg" alt="Drip Irrigation">
-            <h3>💧 Sistem Irigasi Tetes</h3>
-            <p>
-                Menghemat penggunaan air dan meningkatkan efektivitas penyiraman.
-            </p>
+      <article class="product" data-cat="alat">
+        <div class="tile b">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Traktor mini">
+            <ellipse cx="62" cy="82" rx="46" ry="4" class="so"/>
+            <rect class="d" x="82" y="24" width="5" height="18" rx="2"/>
+            <path class="g" d="M50 42h38l9 17v9H50z"/>
+            <path class="g" d="M28 28h26v28H28z"/>
+            <rect class="l" x="33" y="33" width="16" height="14" rx="3"/>
+            <circle class="d" cx="38" cy="64" r="17"/><circle class="y" cx="38" cy="64" r="7"/>
+            <circle class="d" cx="90" cy="70" r="11"/><circle class="y" cx="90" cy="70" r="4.5"/>
+          </svg>
         </div>
+        <div class="product-body">
+          <span class="tag">Alat Pertanian</span>
+          <h3>Traktor Mini</h3>
+          <p>Membantu pengolahan lahan lebih cepat, efisien, dan hemat tenaga.</p>
+          <div class="actions">
+            <a class="btn btn-wa btn-sm" data-wa="Halo PetaniMuda.id, saya ingin bertanya tentang Traktor Mini." href="https://wa.me/6283866268372" target="_blank" rel="noopener">Tanya via WhatsApp</a>
+          </div>
+        </div>
+      </article>
 
-        <div class="product-card">
-            <img src="sensor-tanah.jpg" alt="Sensor Tanah">
-            <h3>📡 Sensor Kelembaban Tanah</h3>
-            <p>
-                Monitoring kondisi lahan secara real-time berbasis Smart Farming.
-            </p>
+      <article class="product" data-cat="smart">
+        <div class="tile c">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Pipa irigasi tetes">
+            <rect class="d" x="8" y="26" width="104" height="7" rx="3.5"/>
+            <rect class="g" x="28" y="33" width="5" height="9" rx="1.5"/><rect class="g" x="58" y="33" width="5" height="9" rx="1.5"/><rect class="g" x="88" y="33" width="5" height="9" rx="1.5"/>
+            <path class="w" d="M30.5 46c-5 7-5 12 0 12s5-5 0-12z"/><path class="w" d="M60.5 46c-5 7-5 12 0 12s5-5 0-12z"/><path class="w" d="M90.5 46c-5 7-5 12 0 12s5-5 0-12z"/>
+            <path class="so" d="M8 74h104v10H8z"/>
+            <path class="sg" d="M30 74v-6M60 74v-6M90 74v-6"/>
+            <path class="g" d="M30 68c-6-1-7-5-6-8 4 0 7 3 6 8zM60 68c-6-1-7-5-6-8 4 0 7 3 6 8zM90 68c-6-1-7-5-6-8 4 0 7 3 6 8z"/>
+          </svg>
         </div>
+        <div class="product-body">
+          <span class="tag">Smart Farming</span>
+          <h3>Sistem Irigasi Tetes</h3>
+          <p>Menghemat penggunaan air dan meningkatkan efektivitas penyiraman.</p>
+          <div class="actions">
+            <a class="btn btn-wa btn-sm" data-wa="Halo PetaniMuda.id, saya ingin bertanya tentang Sistem Irigasi Tetes." href="https://wa.me/6283866268372" target="_blank" rel="noopener">Tanya via WhatsApp</a>
+          </div>
+        </div>
+      </article>
 
-        <div class="product-card">
-            <img src="sprayer.jpg" alt="Sprayer">
-            <h3>🔋 Sprayer Elektrik</h3>
-            <p>
-                Penyemprotan pupuk dan pestisida lebih cepat dan efisien.
-            </p>
+      <article class="product" data-cat="smart">
+        <div class="tile c">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Sensor kelembaban tanah">
+            <path class="so" d="M8 72h104v14H8z"/>
+            <rect class="d" x="57" y="30" width="6" height="46" rx="2"/>
+            <rect class="g" x="48" y="18" width="24" height="16" rx="4"/>
+            <circle class="y" cx="60" cy="26" r="3"/>
+            <path class="sw" d="M44.4 13.4A22 22 0 0 1 75.6 13.4"/>
+            <path class="sw" d="M37.4 6.4A32 32 0 0 1 82.6 6.4" style="opacity:.55"/>
+          </svg>
         </div>
+        <div class="product-body">
+          <span class="tag">Smart Farming</span>
+          <h3>Sensor Kelembaban Tanah</h3>
+          <p>Monitoring kondisi lahan secara real-time berbasis Smart Farming.</p>
+          <div class="actions">
+            <a class="btn btn-wa btn-sm" data-wa="Halo PetaniMuda.id, saya ingin bertanya tentang Sensor Kelembaban Tanah." href="https://wa.me/6283866268372" target="_blank" rel="noopener">Tanya via WhatsApp</a>
+            <a class="btn btn-ghost btn-sm" href="#simulasi" data-go="simulasi">Coba simulasi</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-cat="alat">
+        <div class="tile b">
+          <svg viewBox="0 0 120 90" role="img" aria-label="Sprayer elektrik">
+            <ellipse cx="50" cy="82" rx="26" ry="4" class="so"/>
+            <rect class="d" x="42" y="10" width="12" height="9" rx="2"/>
+            <rect class="g" x="30" y="18" width="36" height="58" rx="10"/>
+            <rect class="l" x="38" y="30" width="20" height="14" rx="3"/>
+            <path class="y" d="M44 52h8v12h-8z"/>
+            <path class="sd" d="M66 52c12 0 14 6 22 6"/>
+            <rect class="d" x="86" y="54" width="22" height="5" rx="2.5"/>
+            <circle class="w" cx="112" cy="50" r="2.4"/><circle class="w" cx="115" cy="58" r="2.4"/><circle class="w" cx="111" cy="66" r="2.4"/>
+          </svg>
+        </div>
+        <div class="product-body">
+          <span class="tag">Alat Pertanian</span>
+          <h3>Sprayer Elektrik</h3>
+          <p>Penyemprotan pupuk dan pestisida lebih cepat dan efisien.</p>
+          <div class="actions">
+            <a class="btn btn-wa btn-sm" data-wa="Halo PetaniMuda.id, saya ingin bertanya tentang Sprayer Elektrik." href="https://wa.me/6283866268372" target="_blank" rel="noopener">Tanya via WhatsApp</a>
+          </div>
+        </div>
+      </article>
 
     </div>
+    <p class="count" id="productCount" aria-live="polite">Menampilkan 6 dari 6 produk</p>
+  </div>
+</section>
 
-    <div class="card">
-        <h2>🌟 Keunggulan PetaniMuda.id</h2>
-        <ul>
-            <li>Produk berkualitas dan terpercaya.</li>
-            <li>Harga kompetitif.</li>
-            <li>Pengiriman ke seluruh Indonesia.</li>
-            <li>Konsultasi pertanian.</li>
-            <li>Dukungan teknologi Smart Farming.</li>
-            <li>Edukasi pertanian berkelanjutan.</li>
-        </ul>
+<section class="section band" id="simulasi">
+  <div class="wrap sim">
+    <div class="sim-controls">
+      <span class="eyebrow">Simulasi Smart Farming</span>
+      <h2>Geser, dan lihat sensor tanah bekerja</h2>
+      <p>Sensor kelembaban tanah membaca kondisi lahan, lalu irigasi tetes menyala atau berhenti sesuai kebutuhan. Coba ubah nilainya untuk melihat hasilnya.</p>
+      <div class="slider-box">
+        <div class="slider-top"><label for="moist">Kelembaban tanah</label><output id="moistOut" for="moist">58%</output></div>
+        <input type="range" id="moist" min="0" max="100" step="1" value="58">
+        <div class="zones"><span>0% kering</span><span>35%</span><span>70%</span><span>100% basah</span></div>
+        <div class="presets">
+          <button class="btn btn-ghost btn-sm" type="button" data-preset="20">Tanah kering</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-preset="55">Kondisi ideal</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-preset="88">Terlalu basah</button>
+        </div>
+      </div>
+      <p class="note">Ambang 35% dan 70% hanya contoh simulasi. Batas yang tepat bergantung pada jenis tanaman dan tanah Anda.</p>
     </div>
-
-    <div class="card contact">
-        <h2>📞 Hubungi Kami</h2>
-
-        <p><strong>WhatsApp:</strong> 083866268372</p>
-        <p><strong>Email:</strong> info@petanimuda.id</p>
-        <p><strong>Website:</strong> petanimuda.biz.id</p>
-
-        <a class="whatsapp"
-           href="https://wa.me/6283866268372?text=Halo%20PetaniMuda.id%2C%20saya%20ingin%20konsultasi%20produk%20pertanian."
-           target="_blank">
-           Chat WhatsApp Sekarang
-        </a>
-
+    <div class="sim-out" aria-live="polite">
+      <svg class="gauge is-ok" id="gauge" viewBox="0 0 200 124" role="img" aria-label="Pengukur kelembaban tanah">
+        <path class="track" d="M20 100A80 80 0 0 1 180 100"/>
+        <path class="val" id="gaugeVal" d="M20 100A80 80 0 0 1 180 100" stroke-dasharray="145.8 251.3"/>
+        <text class="num" id="gaugeNum" x="100" y="92" text-anchor="middle">58%</text>
+        <text class="lab" x="100" y="114" text-anchor="middle">kelembaban tanah</text>
+      </svg>
+      <span class="state" id="simState">Kelembaban ideal</span>
+      <p class="advice" id="simAdvice">Tanaman cukup air. Irigasi tetes standby dan tidak perlu menyiram.</p>
+      <div class="pump"><span class="status-dot" id="simDot"></span><span>Pompa irigasi:</span><strong id="simPump">STANDBY</strong></div>
     </div>
+  </div>
+</section>
 
-</div>
+<section class="section" id="kalkulator">
+  <div class="wrap calc">
+    <div class="calc-intro">
+      <span class="eyebrow">Kalkulator Pupuk</span>
+      <h2>Perkirakan kebutuhan pupuk lahan Anda</h2>
+      <p>Masukkan luas lahan dan dosis per hektar, hasilnya langsung dihitung. Kirim hasilnya ke kami untuk menanyakan harga dan ketersediaan.</p>
+      <p class="note">Dosis awal hanyalah contoh. Sesuaikan dengan anjuran penyuluh atau hasil konsultasi untuk tanaman Anda.</p>
+    </div>
+    <form class="panel form" id="calcForm" onsubmit="return false">
+      <div class="row2">
+        <div class="field"><label for="calcArea">Luas lahan</label><input id="calcArea" type="number" inputmode="decimal" min="0" step="any" value="1000"></div>
+        <div class="field"><label for="calcUnit">Satuan</label><select id="calcUnit"><option value="m2">meter persegi</option><option value="ha">hektar</option></select></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="calcProd">Jenis pupuk</label><select id="calcProd"><option value="organik">Pupuk Organik</option><option value="npk">Pupuk NPK</option></select></div>
+        <div class="field"><label for="calcDose">Dosis (kg per hektar)</label><input id="calcDose" type="number" inputmode="decimal" min="0" step="any" value="2000"></div>
+      </div>
+      <div class="result" aria-live="polite">
+        <small>Perkiraan kebutuhan</small>
+        <strong id="calcTotal">200 kg</strong>
+        <span id="calcPer">sekitar 200 g per meter persegi</span>
+      </div>
+      <a class="btn btn-wa" id="calcWa" href="https://wa.me/6283866268372" target="_blank" rel="noopener">Tanya harga di WhatsApp</a>
+    </form>
+  </div>
+</section>
 
-<footer>
-    <h3>🌱 PetaniMuda.id</h3>
-    <p>Muda Berkarya, Petani Berdaya, Indonesia Jaya.</p>
+<section class="section band" id="keunggulan">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Keunggulan PetaniMuda.id</span>
+      <h2>Alasan petani memilih kami</h2>
+    </div>
+    <div class="perks">
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Produk berkualitas</h3><p>Produk berkualitas dan terpercaya untuk kebutuhan lahan Anda.</p></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.2"/></svg><h3>Harga kompetitif</h3><p>Harga bersaing agar usaha tani tetap efisien.</p></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v10H2z"/><path d="M13 9h5l3 3v4h-8z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><h3>Pengiriman nasional</h3><p>Pengiriman ke seluruh Indonesia.</p></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><h3>Konsultasi pertanian</h3><p>Tanyakan kebutuhan lahan Anda langsung lewat WhatsApp.</p></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg><h3>Teknologi Smart Farming</h3><p>Dukungan sensor, irigasi, dan alat modern untuk lahan Anda.</p></div>
+      <div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c3-1 6-1 8 1 2-2 5-2 8-1v13c-3-1-6-1-8 1-2-2-5-2-8-1z"/><path d="M12 6v13"/></svg><h3>Edukasi berkelanjutan</h3><p>Edukasi pertanian berkelanjutan untuk petani Indonesia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap faq-wrap">
+    <div class="section-head" style="margin:0">
+      <span class="eyebrow">Pertanyaan Umum</span>
+      <h2>Yang sering ditanyakan</h2>
+      <p>Belum menemukan jawabannya? Tanyakan langsung lewat WhatsApp.</p>
+    </div>
+    <div class="faq">
+      <details open><summary>Produk apa saja yang tersedia?</summary><p>Pupuk organik, pupuk NPK, traktor mini, sistem irigasi tetes, sensor kelembaban tanah, dan sprayer elektrik.</p></details>
+      <details><summary>Bagaimana cara memesan?</summary><p>Pilih produk di katalog, lalu tekan Tanya via WhatsApp. Pesan akan terisi nama produk, dan tim kami membalas dengan harga serta ketersediaan.</p></details>
+      <details><summary>Apakah bisa konsultasi sebelum membeli?</summary><p>Bisa. Kami melayani konsultasi pertanian lewat WhatsApp untuk membantu Anda memilih produk yang sesuai.</p></details>
+      <details><summary>Apakah pengiriman sampai luar pulau?</summary><p>Kami melayani pengiriman ke seluruh Indonesia. Hubungi kami lewat WhatsApp untuk menanyakan detail pengiriman ke daerah Anda.</p></details>
+      <details><summary>Apa itu Smart Farming?</summary><p>Smart Farming memanfaatkan sensor dan alat modern, misalnya sensor kelembaban tanah dan irigasi tetes, supaya penyiraman dan pemupukan lebih tepat dan efisien.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section band" id="kontak">
+  <div class="wrap contact">
+    <div class="contact-info">
+      <span class="eyebrow">Hubungi Kami</span>
+      <h2>Ceritakan kebutuhan lahan Anda</h2>
+      <p>Kami membalas lewat WhatsApp. Anda juga bisa menyalin kontak di bawah ini.</p>
+      <div class="rows">
+        <div class="row"><span class="k">WhatsApp</span><span class="val">083866268372</span><button class="copy" type="button" data-copy="083866268372">Salin</button></div>
+        <div class="row"><span class="k">Email</span><span class="val">info@petanimuda.id</span><button class="copy" type="button" data-copy="info@petanimuda.id">Salin</button></div>
+        <div class="row"><span class="k">Website</span><span class="val">petanimuda.biz.id</span><button class="copy" type="button" data-copy="petanimuda.biz.id">Salin</button></div>
+      </div>
+      <div><a class="btn btn-wa" href="https://wa.me/6283866268372?text=Halo%20PetaniMuda.id%2C%20saya%20ingin%20konsultasi%20produk%20pertanian." target="_blank" rel="noopener">Chat WhatsApp Sekarang</a></div>
+    </div>
+    <form class="panel form" id="consultForm" onsubmit="return false">
+      <div class="field"><label for="cName">Nama</label><input id="cName" type="text" autocomplete="name" placeholder="Nama Anda"></div>
+      <div class="field"><label for="cNeed">Yang ingin ditanyakan</label>
+        <select id="cNeed">
+          <option>produk pertanian</option><option>Pupuk Organik</option><option>Pupuk NPK</option><option>Traktor Mini</option><option>Sistem Irigasi Tetes</option><option>Sensor Kelembaban Tanah</option><option>Sprayer Elektrik</option><option>Smart Farming secara umum</option>
+        </select>
+      </div>
+      <div class="field"><label for="cMsg">Pesan tambahan</label><textarea id="cMsg" placeholder="Contoh: luas lahan, jenis tanaman, lokasi pengiriman"></textarea></div>
+      <a class="btn btn-wa" id="cWa" href="https://wa.me/6283866268372" target="_blank" rel="noopener">Kirim lewat WhatsApp</a>
+      <p class="note">Tombol membuka WhatsApp dengan pesan yang sudah terisi. Pesan baru terkirim setelah Anda menekan kirim di WhatsApp.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" data-go="top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--sun)"/><path d="M16 25V13" stroke="var(--on-sun)" stroke-width="2.2" stroke-linecap="round" fill="none"/><path d="M16 15c-5 0-7-3-7-6 5 0 7 2.5 7 6zM16 18c5 0 7-3 7-6-5 0-7 2.5-7 6z" fill="var(--on-sun)"/></svg><span>PetaniMuda<span class="dot">.id</span></span></a>
+        <p>Muda Berkarya, Petani Berdaya, Indonesia Jaya.</p>
+      </div>
+      <nav aria-label="Menu footer">
+        <a href="#tentang" data-go="tentang">Tentang</a><a href="#produk" data-go="produk">Produk</a><a href="#simulasi" data-go="simulasi">Smart Farming</a><a href="#kalkulator" data-go="kalkulator">Kalkulator</a><a href="#kontak" data-go="kontak">Kontak</a>
+      </nav>
+    </div>
+    <div class="copyright">© 2026 PetaniMuda.id. Solusi Pertanian Modern untuk Indonesia.</div>
+  </div>
 </footer>
 
-</body>
-</html>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var WA='https://wa.me/6283866268372';
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root=document.documentElement;
+  var nf=new Intl.NumberFormat('id-ID',{maximumFractionDigits:1});
+
+  function waLink(text){return WA+'?text='+encodeURIComponent(text)}
+  $$('[data-wa]').forEach(function(a){a.href=waLink(a.getAttribute('data-wa'))});
+
+  var tt;
+  function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show')},2200)}
+
+  /* Tema */
+  try{var saved=localStorage.getItem('pm-theme');if(saved)root.setAttribute('data-theme',saved)}catch(e){}
+  $('#themeBtn').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('pm-theme',next)}catch(e){}
+  });
+
+  /* Navigasi */
+  var nav=$('#nav'),menuBtn=$('#menuBtn');
+  function closeMenu(){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}
+  menuBtn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  function go(id){
+    var el=document.getElementById(id);if(!el)return;
+    el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+    closeMenu();
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-go]');if(!a)return;
+    e.preventDefault();
+    var calc=a.getAttribute('data-calc');
+    if(calc){$('#calcProd').value=calc;resetDose();calcUpdate()}
+    go(a.getAttribute('data-go'));
+  });
+  var links=$$('.nav a');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('data-go')===en.target.id)})}
+      });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    ['tentang','produk','simulasi','kalkulator','keunggulan','kontak'].forEach(function(id){var s=document.getElementById(id);if(s)io.observe(s)});
+  }
+
+  /* Tab visi / misi */
+  var tabs=$$('.tab');
+  function selectTab(t){
+    tabs.forEach(function(x){
+      var on=x===t;
+      x.setAttribute('aria-selected',on?'true':'false');
+      x.tabIndex=on?0:-1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){selectTab(t)});
+    t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+        var n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];
+        selectTab(n);n.focus();
+      }
+    });
+  });
+
+  /* Filter produk */
+  var cards=$$('#productGrid .product'),filters=$$('.filter');
+  filters.forEach(function(f){
+    f.addEventListener('click',function(){
+      var k=f.getAttribute('data-filter'),n=0;
+      filters.forEach(function(x){x.setAttribute('aria-pressed',x===f?'true':'false')});
+      cards.forEach(function(c){var show=k==='all'||c.getAttribute('data-cat')===k;c.hidden=!show;if(show)n++});
+      $('#productCount').textContent='Menampilkan '+n+' dari '+cards.length+' produk';
+    });
+  });
+
+  /* Simulasi sensor */
+  var CIRC=Math.PI*80;
+  var moist=$('#moist');
+  function simUpdate(){
+    var v=+moist.value,st,txt,pump,cls;
+    if(v<35){cls='dry';st='Tanah kering';txt='Tanaman butuh air. Irigasi tetes menyala dan penyiraman disarankan.';pump='AKTIF'}
+    else if(v<=70){cls='ok';st='Kelembaban ideal';txt='Tanaman cukup air. Irigasi tetes standby dan tidak perlu menyiram.';pump='STANDBY'}
+    else{cls='wet';st='Terlalu basah';txt='Tanah jenuh air. Irigasi dimatikan, tunda penyiraman dan periksa drainase.';pump='MATI'}
+    $('#moistOut').textContent=v+'%';
+    $('#gaugeNum').textContent=v+'%';
+    $('#gaugeVal').setAttribute('stroke-dasharray',(v/100*CIRC).toFixed(1)+' '+CIRC.toFixed(1));
+    $('#gauge').setAttribute('class','gauge is-'+cls);
+    var s=$('#simState');s.textContent=st;s.className='state'+(cls==='ok'?'':' '+cls);
+    $('#simAdvice').textContent=txt;
+    $('#simPump').textContent=pump;
+    $('#simDot').className='status-dot'+(cls==='ok'?'':' '+cls);
+    $('#heroMoist').textContent=v+'%';
+    $('#heroPump').textContent=pump.charAt(0)+pump.slice(1).toLowerCase();
+    $('#heroDot').className='status-dot'+(cls==='ok'?'':' '+cls);
+  }
+  moist.addEventListener('input',simUpdate);
+  $$('[data-preset]').forEach(function(b){b.addEventListener('click',function(){moist.value=b.getAttribute('data-preset');simUpdate()})});
+  simUpdate();
+
+  /* Kalkulator pupuk */
+  var DOSE={organik:2000,npk:300},NAME={organik:'Pupuk Organik',npk:'Pupuk NPK'};
+  function resetDose(){$('#calcDose').value=DOSE[$('#calcProd').value]}
+  function calcUpdate(){
+    var area=parseFloat($('#calcArea').value),dose=parseFloat($('#calcDose').value),unit=$('#calcUnit').value,prod=$('#calcProd').value;
+    var ok=area>0&&dose>0;
+    if(!ok){$('#calcTotal').textContent='-';$('#calcPer').textContent='Isi luas lahan dan dosis dengan angka lebih dari nol.';$('#calcWa').href=waLink('Halo PetaniMuda.id, saya ingin bertanya tentang '+NAME[prod]+'.');return}
+    var ha=unit==='ha'?area:area/10000,total=ha*dose,perM2=dose/10;
+    $('#calcTotal').textContent=nf.format(total)+' kg';
+    $('#calcPer').textContent='sekitar '+nf.format(perM2)+' g per meter persegi';
+    $('#calcWa').href=waLink('Halo PetaniMuda.id, luas lahan saya '+nf.format(area)+(unit==='ha'?' hektar':' m2')+'. Saya butuh '+NAME[prod]+' sekitar '+nf.format(total)+' kg (dosis '+nf.format(dose)+' kg/ha). Mohon info harga dan ketersediaan.');
+  }
+  $('#calcProd').addEventListener('change',function(){resetDose();calcUpdate()});
+  ['calcArea','calcUnit','calcDose'].forEach(function(id){$('#'+id).addEventListener('input',calcUpdate)});
+  calcUpdate();
+
+  /* Form konsultasi */
+  function consultUpdate(){
+    var n=$('#cName').value.trim(),need=$('#cNeed').value,m=$('#cMsg').value.trim();
+    $('#cWa').href=waLink('Halo PetaniMuda.id, '+(n?'saya '+n+'. ':'')+'saya ingin konsultasi tentang '+need+'.'+(m?' '+m:''));
+  }
+  ['cName','cNeed','cMsg'].forEach(function(id){$('#'+id).addEventListener('input',consultUpdate)});
+  consultUpdate();
+
+  /* Salin kontak */
+  $$('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.getAttribute('data-copy');
+      function fallback(){
+        var n=b.closest('.row').querySelector('.val'),r=document.createRange();
+        r.selectNodeContents(n);var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+        toast('Teks terpilih, salin secara manual');
+      }
+      try{navigator.clipboard.writeText(v).then(function(){toast('Tersalin: '+v)}).catch(fallback)}catch(e){fallback()}
+    });
+  });
+})();
+</script>
