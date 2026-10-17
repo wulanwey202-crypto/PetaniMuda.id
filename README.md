@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="smart-farming.jpg" alt="Logo PetaniMuda.id, Generasi Bertani untuk Masa Depan" width="420">
+
 # PetaniMuda.id
 
 **Solusi Pertanian Modern untuk Indonesia**
@@ -38,14 +40,14 @@ Menjadi platform pertanian modern terpercaya yang mendukung kemajuan petani Indo
 
 Enam produk dalam tiga kategori. Setiap produk punya tombol **Tanya via WhatsApp** yang pesannya sudah terisi nama produk.
 
-| Kategori | Produk | Deskripsi |
-| --- | --- | --- |
-| Pupuk | **Pupuk Organik** | Pupuk berbahan alami untuk menjaga kesuburan tanah dan meningkatkan kualitas hasil panen. |
-| Pupuk | **Pupuk NPK** | Mengandung unsur hara lengkap untuk mendukung pertumbuhan tanaman yang optimal. |
-| Alat Pertanian | **Traktor Mini** | Membantu pengolahan lahan lebih cepat, efisien, dan hemat tenaga. |
-| Alat Pertanian | **Sprayer Elektrik** | Penyemprotan pupuk dan pestisida lebih cepat dan efisien. |
-| Smart Farming | **Sistem Irigasi Tetes** | Menghemat penggunaan air dan meningkatkan efektivitas penyiraman. |
-| Smart Farming | **Sensor Kelembaban Tanah** | Monitoring kondisi lahan secara real-time berbasis Smart Farming. |
+| Foto | Kategori | Produk | Deskripsi |
+| --- | --- | --- | --- |
+| <img src="pupuk-organik.jpg" alt="Pupuk Organik" width="140"> | Pupuk | **Pupuk Organik** | Pupuk berbahan alami untuk menjaga kesuburan tanah dan meningkatkan kualitas hasil panen. |
+| <img src="pupuk-npk.jpg" alt="Pupuk NPK" width="140"> | Pupuk | **Pupuk NPK** | Mengandung unsur hara lengkap untuk mendukung pertumbuhan tanaman yang optimal. |
+| <img src="traktor-mini.jpg" alt="Traktor Mini" width="140"> | Alat Pertanian | **Traktor Mini** | Membantu pengolahan lahan lebih cepat, efisien, dan hemat tenaga. |
+| <img src="sprayer.jpg" alt="Sprayer Elektrik" width="140"> | Alat Pertanian | **Sprayer Elektrik** | Penyemprotan pupuk dan pestisida lebih cepat dan efisien. |
+| <img src="drip-irrigation.jpg" alt="Sistem Irigasi Tetes" width="140"> | Smart Farming | **Sistem Irigasi Tetes** | Menghemat penggunaan air dan meningkatkan efektivitas penyiraman. |
+| <img src="sensor-tanah.jpg" alt="Sensor Kelembaban Tanah" width="140"> | Smart Farming | **Sensor Kelembaban Tanah** | Monitoring kondisi lahan secara real-time berbasis Smart Farming. |
 
 ---
 
