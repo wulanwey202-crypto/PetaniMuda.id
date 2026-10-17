@@ -18,6 +18,19 @@
 
 PetaniMuda.id hadir sebagai mitra petani Indonesia dalam menyediakan pupuk berkualitas, alat pertanian modern, dan teknologi Smart Farming untuk meningkatkan produktivitas serta efisiensi usaha tani.
 
+## Daftar Isi
+
+1. [Tentang Kami](#tentang-kami)
+   - [Visi](#visi)
+   - [Misi](#misi)
+2. [Produk Unggulan](#produk-unggulan)
+3. [Fitur Website](#fitur-website)
+4. [Keunggulan PetaniMuda.id](#keunggulan-petanimudaid)
+5. [Pertanyaan Umum](#pertanyaan-umum)
+6. [Hubungi Kami](#hubungi-kami)
+
+---
+
 ## Tentang Kami
 
 Pertanian merupakan sektor penting dalam kehidupan masyarakat Indonesia. Seiring perkembangan teknologi, kebutuhan akan pupuk berkualitas dan alat pertanian modern semakin meningkat. PetaniMuda.id menyediakan produk pertanian yang berkualitas, mudah diakses, dan sesuai dengan kebutuhan pertanian masa kini.
